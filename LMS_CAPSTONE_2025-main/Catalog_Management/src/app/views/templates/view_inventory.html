@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/catalog/static/css/view_inventory.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header id="header" class="bg-primary text-white text-center mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a id="navbar-brand" class="navbar-brand" href="#">Library Management System</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-2"><a class="nav-link" href="/catalog/admin_dashboard">My Dashboard</a></li>
+                        <li class="nav-item px-2"><a id="logout" class="nav-link" href="/catalog/manager-login" style="background-color: #E3E3E3; border-radius: 15px">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-auto">
+        <div class="row">
+            <!-- Left Side: Search and Filters -->
+            <div class="col-md-12">
+                <div id="searchFilterSection" class="bg-light p-4 rounded mb-4">
+                    <h2 id="section-title" class="text-center mb-3">View, Search, and Filter Inventory</h2>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Search by title, author, or ISBN..." oninput="searchBooks()">
+                        </div>
+                        <div class="col-md-2">
+                            <select id="genreFilter" class="form-select" onchange="filterBooks()">
+                                <option value="">All Genres</option>
+                                <option value="Fiction">Fiction</option>
+                                <option value="Romance">Romance</option>
+                                <option value="Adventure">Adventure</option>
+                                <option value="Classic">Classic</option>
+                                <option value="Science Fiction">Science Fiction</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select id="availabilityFilter" class="form-select" onchange="filterBooks()">
+                                <option value="">All Availability</option>
+                                <option value="Available">Available</option>
+                                <option value="Not Available">Not Available</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select id="quantityFilter" class="form-select" onchange="filterBooks()">
+                                <option value="">Quantity</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <input type="checkbox" id="kidFriendlyFilter" class="form-check-input" onchange="filterBooks()">
+                            <label for="kidFriendlyFilter" class="form-check-label">Kid Friendly</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book List (Cards in Grid Layout) -->
+            <div class="col-md-12">
+                <div id="bookGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <!-- Books dynamically inserted here -->
+                </div>
+            </div>
+            <div id="bookDetails" class="bookDetails d-none bg-light p-4"></div>
+        </div>
+    </div>
+
+    <footer id="footer" class="footer text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+        <p>2025 Capstone Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.1/jszip.min.js"></script>  <!-- JSZip CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/epubjs@0.3.93/dist/epub.min.js"></script>
+    <script src="/catalog/static/js/view_inventory.js"></script>
+    
+</body>
+
+</html>

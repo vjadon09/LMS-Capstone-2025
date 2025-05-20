@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/catalog/static/css/modify_book.css" rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Header -->
+    <header class="bg-primary text-white text-center mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Library Management System</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="/catalog/admin_dashboard">My Dashboard</a>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="/catalog/manager-login"
+                                style="background-color: #E3E3E3; border-radius: 15px">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container my-auto">
+        <div class="row">
+            <!-- Left Side: Search and Book List -->
+            <div class="col-md-5">
+                <div class="modify-book-form bg-light p-4">
+                    <h2 class="text-center mb-3">Search Books</h2>
+                    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search by ISBN, title, or author..." oninput="searchBooks()">
+                    <ul id="bookList" class="list-group"></ul>
+                    <div class="col-2">
+                      <button type="button" class="btn btn-cancel-size px-4 mx-2 mt-3" style = "border-color: black;" onclick="menuReturn()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Book Details Form -->
+            <div class="col-md-7 mb-3">
+                <div id="bookDetails" class="modify-book-form bg-light p-4"></div>
+                <div id="bookDetailsForm" class="modify-book-form bg-light p-4">
+                    <h2 class="text-center mb-3">Modify Book Details ✏️</h2>
+                    <form id="modifyBookForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="title" class="form-label">Title</label>
+                                <input type="text" id="title" name="title" class="form-control" placeholder="Title" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="author" class="form-label">Author</label>
+                                <input type="text" id="author" name="author" class="form-control" placeholder="Author" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input type="text" id="isbn" name="isbn" class="form-control" placeholder="ISBN" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="genre" class="form-label">Genre</label>
+                                <input type="text" id="genre" name="genre" class="form-control" placeholder="Genre" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="numCopies" class="form-label">Number of Copies</label>
+                                <input type="number" id="numCopies" name="numCopies" class="form-control" placeholder="NumberOfCopies" min="1" max="6" required>
+                            </div>
+                            <div class="col-md-6 mb-3 d-flex align-items-center">
+                                <input type="checkbox" id="kidFriendly" name="kidFriendly" class="form-check-input mt-4 me-2" required>
+                                <label for="kidFriendly" class="form-check-label mt-4">Kid Friendly</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea id="description" name="description" class="form-control" placeholder="Description"></textarea required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="format" class="form-label">Format</label>
+                                <input type="text" id="format" name="format" class="form-control" placeholder="Format" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6 mb-3">
+                            <label for="pageNumber" class="form-label">Page Number</label>
+                            <input type="number" id="pageNumber" name="pageNumber" class="form-control" placeholder="Page Number">
+                        </div>
+                          <div class="col-md-6 mb-3">
+                              <label for="numOfMins" class="form-label">Number of Minutes</label>
+                              <input type="number" id="numOfMins" name="numOfMins" class="form-control" placeholder="Minutes" min="1">
+                          </div>
+                      </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="publisher" class="form-label">Publisher</label>
+                                <input type="text" id="publisher" name="publisher" class="form-control" placeholder="Publisher" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="status" class="form-label">Status</label>
+                                <select id="status" name="status" class="form-select">
+                                    <option value="Available">Available</option>
+                                    <option value="Not Available">Not Available</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-6" id="fileUploadSection">
+                            <label for="bookFile" class="form-label">Upload Book File:</label>
+                            <input type="file" class="form-control" id="bookFile" name="bookFile" accept=".mp3,.epub">
+                          </div> 
+                        </div>
+                        <div class="row">
+                          <div class="mb-3">
+                            <label for="imageUpload" class="form-label">Upload Book Cover:</label>
+                            <input type="file" class="form-control" id="imageUpload" name="imageUpload" accept="image/*" onchange="previewImage(event)">
+                          </div>
+                          <div class="mb-3">
+                            <img id="imagePreview" src="#" alt="Image Preview" style="display: none; width: 100%; max-width: 14rem;"/>
+                          </div>       
+                      </div>
+                        <button type="submit" class="btn btn-custom-size px-4" id="modifyButton" onclick="modifyBook(event)">Modify</button>
+                        <button type="button" class="btn btn-clear-size px-4 mx-2" onclick="cancel()">Cancel</button>
+                        <button type="button" class="btn btn-clear-size px-4" onclick="back()">Back</button>
+                    </form>
+                    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body" id="modal-body"> </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+        <p>2025 Capstone Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="/catalog/static/js/modify_book.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+.custom-container-formatting {
+    margin: 0 0 2rem 0;
+}
+
+.title{
+    margin: 0 0 2rem 0;
+}
+
+#pdf-render {
+    border: 1px solid rgba(190, 187, 187, 0.145);
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.473);
+}
+
+.footer-home {
+    background-color: #132b37;
+    color: white;
+    padding: 0px 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #pdf-render {
+        width: 100%;
+        height: auto;
+    }
+
+    .custom-container-formatting {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    #prev, #next {
+        width: 48%;
+    }
+    
+    #navbarNav {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-bottom: 5px;
+    }
+}

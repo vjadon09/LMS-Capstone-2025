@@ -1,0 +1,15 @@
+.card{
+  background-color: #E3E3E3;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #E3E3E3;
+}
+
+.btn-custom-size {
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #162D3A;
+  color: white;
+  transition: background-color 0.3s;
+}

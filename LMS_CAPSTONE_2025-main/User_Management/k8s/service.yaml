@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: usermanage
+spec:
+  type: ClusterIP
+  selector:
+    app: usermanage
+  ports:
+    - protocol: TCP
+      port: 8006
+      targetPort: 8006

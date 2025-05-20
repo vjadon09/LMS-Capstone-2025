@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Result</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/search/static/css/search_result_page.css" rel="stylesheet">
+
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="bg-primary text-white text-center mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/search/login">Library Management System</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link active my-library-link" aria-current="page" href="/search/mylib">My Library</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/search/home">Browse</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link my-library-link" href="/search/logout">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container justify-content-center" >
+    <!-- Content goes here -->
+    <div class="row w-100 mb-4">
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-6">
+                    <h3 class="m-4" id="Keyword"> 🔍 Keyword: {{ query }}</h3>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-2 d-flex">
+                   <!-- goes back to search page -->
+                   <button type="button" class="btn btn-custom-back my-4 w-100 p-2" onclick="window.location.href='/search/home'">Catalogue 🔙</button>
+                  </div>
+            </div>
+        </div>
+        <div class="filter col-2 p-1">
+            <div class="container mt-1">
+                <h4 class="my-3 px-3">Filter 🗂️</h4>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Availability
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                              <li class="list-group-item">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Available" id="book-available">
+                                      <label class="form-check-label" for="book-available">
+                                          Available
+                                      </label>
+                                  </div>
+                              </li>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Format
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse">
+                          <div class="accordion-body">
+                              <li class="list-group-item">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="eBook" id="book-format-1">
+                                      <label class="form-check-label" for="book-format-1">
+                                          eBook
+                                      </label>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="Audio" id="book-format-2">
+                                      <label class="form-check-label" for="book-format-2">
+                                          Audio
+                                      </label>
+                                  </div>
+                              </li>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Genre
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          <ul class="list-unstyled">
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre1" value="Romance"><label class="form-check-label" for="genre1"> Romance</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre2" value="Fantasy"><label class="form-check-label" for="genre2"> Fantasy</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre3" value="Historical Fiction"><label class="form-check-label" for="genre3"> Historical Fiction</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre4" value="Fiction"><label class="form-check-label" for="genre4"> Fiction</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre5" value="Non Fiction"><label class="form-check-label" for="genre5"> Non Fiction</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre6" value="Classic"><label class="form-check-label" for="genre6"> Classic</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre7" value="Science Fiction"><label class="form-check-label" for="genre7"> Science Fiction</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre8" value="Biography"><label class="form-check-label" for="genre8"> Biography</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre9" value="Adventure"><label class="form-check-label" for="genre9"> Adventure</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre10" value="Dystopian"><label class="form-check-label" for="genre10"> Dystopian</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre11" value="Political Satire"><label class="form-check-label" for="genre11"> Political Satire</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre12" value="Biography"><label class="form-check-label" for="genre12"> Biography</label></div></li>
+                            <li class="list-group-item"><div class="form-check"><input class="form-check-input" type="checkbox" id="genre13" value="Young Adult"><label class="form-check-label" for="genre13"> Young Adult</label></div></li>
+                          </ul>                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          Audience
+                        </button>
+                      </h2>
+                      <div id="collapseFour" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="False" id="book-audience-1">
+                                    <label class="form-check-label" for="book-audience-1">
+                                        Adult
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="True" id="book-audience-2">
+                                    <label class="form-check-label" for="book-audience-2">
+                                        Kids
+                                    </label>
+                                </div>
+                            </li>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                          Rating
+                        </button>
+                      </h2>
+                      <div id="collapseFive" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="5" id="rating-5">
+                                    <label class="form-check-label" for="rating-5">
+                                        ⭐⭐⭐⭐⭐
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="4" id="rating-4">
+                                    <label class="form-check-label" for="rating-4">
+                                        ⭐⭐⭐⭐
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="3" id="rating-3">
+                                    <label class="form-check-label" for="rating-3">
+                                        ⭐⭐⭐
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="2" id="rating-2">
+                                    <label class="form-check-label" for="rating-2">
+                                        ⭐⭐
+                                    </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" id="rating-1">
+                                    <label class="form-check-label" for="rating-1">
+                                        ⭐
+                                    </label>
+                                </div>
+                            </li>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-custom-filter m-3 px-3" onclick="applyFilters()">Apply Filters</button>
+                  <button type="submit" class="btn btn-custom-reset m-3 px-3" onclick="resetFilters()">Reset Filters</button>
+            </div>      
+        </div>
+        <div class="book-card container col-9">
+            <div class="row" id="bookCardContainer">
+                <!-- Cards will be added here -->
+            </div>
+        </div>
+</main> 
+
+  <!-- Footer -->
+  <footer class="text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+    <p>2025 Capstone Project</p>
+  </footer>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/search/static/js/search_result_page.js"></script>
+</body>
+</html>

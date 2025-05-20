@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Info</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/search/static/css/item_info.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="bg-primary text-white text-center mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/search/login">Library Management System</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link active my-library-link" aria-current="page" href="/search/mylib">My Library</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/search/home">Browse</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link my-library-link" href="/search/logout">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-auto d-flex justify-content-center">
+    <div class="row w-100 mb-3 mt-3">
+      <!-- Image on the left -->
+      <div class="col-1"></div>
+      <div class="col-3 justify-content-center align-items-center" id="book-cover"></div>
+      <!-- Text on the right -->
+      <div class="col-7">
+        <div class="card pb-2">
+            <h5 class="card-header" id="book-title"></h5>
+            <div class="row">
+                <div class="col-8">  
+                    <div class="card-body" id="main-book-info"></div>
+                      <!-- Make accordion take full width -->
+                      <div class="accordion p-3" id="accordionExample"> 
+                          <div class="accordion-item">
+                              <h1 class="accordion-header">
+                                  <button class="card-header accordion-button collapsed py-2 w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                      <h5 class="m-0">Book Details ℹ️</h5>
+                                  </button>
+                              </h1>
+                              <div id="collapseOne" class="accordion-collapse collapse">
+                                  <div class="accordion-body" id="book-info"></div>
+                              </div>
+                          </div>
+                      </div> 
+                  </div>
+                  <div class="card-body col-4 mt-4 flex-column justify-content-center align-items-center">
+                    <div class="available-info p-2 mx-2 d-flex flex-column justify-content-center align-items-center">
+                      <h6 class="card-text text-start" id="status"></h6>
+                      <button type="submit" class="btn btn-custom-size w-100 m-1" id="hold-button">Place Hold</button>
+                      <button type="button" class="btn btn-custom-size w-100 m-1" id="wishlist-button">💫 Add to Wishlist</button>
+                    </div>
+                </div>
+              </div>
+          </div> 
+        </div>
+      <div class="col-1"></div>
+      <!-- Reviews Section -->
+      <div class="col-1"></div>
+      <div class="col-10 justify-content-center">
+        <div class="card mt-3 w-100">
+          <h5 class="card-header">Reviews and Ratings ⭐</h5>
+          <div class="card-body w-100">
+            <div id="commentsList">
+              <!-- Reviews and Ratings dynamically loaded -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+      <!-- Review Submission Section -->
+      <div class="col-1"></div>
+      <div class="col-10 mt-3">
+        <form class="card w-100">
+          <h5 class="card-header">Leave a Review ✏️</h5>
+          <input type="hidden" name="isbn" value="{{ request.query_params.get('isbn', '') }}"><div class="card-body w-100">
+            <div id="review-box" class="d-flex flex-wrap">
+                <div class="col-4 mt-2">
+                  <div class="rating-box">
+                    <label for="status" class="form-label">Rating:</label>
+                    <div class="stars">
+                      <i class="fa-solid fa-star" value="1"></i>
+                      <i class="fa-solid fa-star" value="2"></i>
+                      <i class="fa-solid fa-star" value="3"></i>
+                      <i class="fa-solid fa-star" value="4"></i>
+                      <i class="fa-solid fa-star" value="5"></i>
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-11 mt-3">
+                    <label for="description" class="form-label">Comment:</label>
+                    <textarea class="form-control" id="description" name="review_comment" rows="2" required></textarea>
+                </div>
+                <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-custom-size px-4" id="review-button">Submit</button>
+                </div>
+            </div>
+          </div>
+        </form> 
+      </div>
+      <div class="col-1"></div>
+    </div>  
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+    <p>2025 Capstone Project</p>
+  </footer>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/search/static/js/item_info.js"></script>
+ 
+</body>
+</html>

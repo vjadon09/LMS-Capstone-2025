@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/auth/static/css/about.css">
+</head>
+<body class="d-flex flex-column min-vh-100" id="body-section">
+    <header class="bg-primary text-white text-center mb-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/auth/login">Library Management System</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="/auth/login" style="background-color: #E3E3E3; border-radius: 15px">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="flex-grow-1 container mb-5">
+        <div class="row align-items-center g-4">
+          <!-- Image on the Left -->
+          <div class="col-lg-5">
+            <div class="card border-0 h-100 bg-transparent">
+              <div class="d-flex justify-content-center">
+                <img src="/auth/static/images/team.jpg" alt="Our Team Photo"
+                     class="shadow-sm img-fluid"
+                     style="background: transparent; border-radius: 20px; width: 80%; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+      
+          <!-- Team Info on the Right -->
+          <div class="col-lg-7">
+            <div class="card bg-light shadow-sm border-0 h-100 p-4">
+              <h2 id="team-heading" class="text-primary mb-3">👩‍💻 Meet the Team</h2>
+              <p class="text-justify">
+                Meet our team (from left to right): <strong>Astha, Mansi, Vaishali, and Atiya</strong>.<br/><br/>
+                We are Computer Engineering students at Toronto Metropolitan University,
+                and this Library Management System was developed as part of our final capstone project for 2025.
+                Inspired by concepts from our third-year course, COE692: Software Design and Architecture,
+                we applied our knowledge to design and implement a Python-based application using a microservices architecture.
+              </p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Project Purpose (Full Width Below) -->
+        <div class="card bg-light shadow-sm border-0 p-4 mt-4">
+          <h3 id="application-purpose" class="text-primary mb-3">📚 Project Purpose</h3>
+          <p class="text-justify">
+            Our project is a cloud-native, Python-based Library Management System (LMS) designed to enhance the efficiency, scalability,
+            and usability of managing both physical and digital library resources. Built with a microservices architecture using
+            <strong>FastAPI, MongoDB, Docker, and Kubernetes</strong> and deployed on Google Cloud, our system streamlines key features like
+            book borrowing, reservations, user authentication, and personalized recommendations. Our goal was to modernize library operations
+            while offering an intuitive, scalable, and user-friendly experience for both patrons and administrators.
+          </p>
+        </div>
+
+        <div class="card bg-light shadow-sm border-0 p-4 mt-4">
+            <h3 class="text-primary mb-3">📬 Contact Us</h3>
+            <form id="contactForm" onsubmit="submitContactForm(); return false;">
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="contact-name" class="form-label">Your Name</label>
+                  <input type="text" class="form-control" id="contact-name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="contact-email" class="form-label">Your Email</label>
+                  <input type="email" class="form-control" id="contact-email" name="email" placeholder="Enter your email" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="contact-message" class="form-label">Message</label>
+                <textarea class="form-control" id="contact-message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+      </main>                
+
+    <footer class="text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+        <p>2025 Capstone Project</p>
+    </footer>
+
+    <script src="/auth/static/js/about.js"></script>
+</body>
+</html>

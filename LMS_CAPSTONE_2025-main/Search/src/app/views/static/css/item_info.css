@@ -1,0 +1,87 @@
+.book-cover{
+    width: 95%;
+    object-fit:cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card{
+    background-color: rgb(225, 230, 232, 0.3);
+    border-radius: 15px;
+    border-color: rgb(225, 230, 232, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header{
+    background-color: #97b8b3;
+}
+
+.btn-custom-size {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.accordion, .accordion-item {
+    width: 100%;
+}
+
+.accordion-button {
+    background-color: #97b8b3; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease; 
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #97b8b3; 
+    color: black;
+}
+
+.accordion-item {
+    border-radius: 15px;
+    border-color: rgb(225, 230, 232, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-body {
+    background-color: rgb(225, 230, 232, 0.3); 
+}
+
+.available-info{
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.532);
+}
+
+#commentsList {
+    height: auto; 
+    overflow-y: scroll; 
+    border-radius: 15px;
+    padding: 10px;
+    max-height: 400px;
+}
+
+.stars i {
+  color: #e6e6e6;
+  font-size: 25px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.stars i.active {
+  color: rgb(255, 226, 52);
+}
+
+.details{
+  color: grey;
+}
+
+.my-library-link {
+    background-color: #e3e3e3;
+    border-radius: 15px;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #162d3a;
+}

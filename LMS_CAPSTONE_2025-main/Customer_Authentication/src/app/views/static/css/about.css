@@ -1,0 +1,64 @@
+/* Background pattern for the whole page */
+#body-section {
+    background-color: #fcfcfc;
+    background-image: radial-gradient(#d2d2d2 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar brand */
+#navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* Home link hover */
+#nav-home:hover {
+    background-color: #d1d1d1 !important;
+    border-radius: 15px;
+}
+
+/* Main container styling */
+#main-content {
+    background: transparent;
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+/* Team header */
+#team-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #343a40;
+    margin-bottom: 1rem;
+}
+
+/* Team photo image */
+#team-photo img {
+    border: 3px solid #007BFF;
+    transition: transform 0.3s ease;
+}
+
+#team-photo img:hover {
+    transform: scale(1.05);
+}
+
+/* Subsection titles */
+#team-description,
+#application-purpose {
+    font-size: 1.3rem;
+    color: #007BFF;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+/* Paragraph text */
+#team-details p {
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 900px;
+    margin: 0 auto;
+}

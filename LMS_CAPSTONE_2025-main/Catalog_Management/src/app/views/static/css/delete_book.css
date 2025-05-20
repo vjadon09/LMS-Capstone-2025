@@ -1,0 +1,52 @@
+.delete-book-form{
+    border-radius: 15px;
+    width: 100%;
+    max-width: 900px; /* Set max-width to prevent it from expanding too much */
+    margin: 0 auto;
+}
+
+.btn-custom-search{
+    background-color: white;
+    text-align: left;  
+}
+
+/* Adjust input fields */
+.form-control, .form-select {
+    border-radius: 15px;
+    padding-left: 10px; /* Fix padding issue */
+    padding: 8px;
+    width: 100%;
+}
+
+/* Custom button styles */
+.btn-custom-size {
+    padding: 6px 12px; /* Adjust padding for smaller size */
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.list-group {
+    max-height: 300px; /* Set a max-height for the book list */
+    overflow-y: auto; /* Allow scrolling if there are many books */
+}
+
+.h5 {
+    color: #162D3A;
+}
+
+.modal{
+  border-radius: 15px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-content {
+  background-color: #162D3A;
+  color: white;
+}

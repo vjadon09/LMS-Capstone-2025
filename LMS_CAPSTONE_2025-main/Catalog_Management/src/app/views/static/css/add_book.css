@@ -1,0 +1,64 @@
+.add-book-form{
+    border-radius: 15px;
+}
+
+/* Custom button styles */
+.btn-custom-size {
+    padding: 6px 12px; /* Adjust padding for smaller size */
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Adjust input fields */
+.form-control, .form-select {
+    border-radius: 15px;
+    padding-left: 10px; /* Fix padding issue */
+    padding: 8px;
+}
+
+/* Form container styling */
+.forgot-password-form {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.btn-remove-size{
+    padding: 5px; /* Adjust padding for smaller size */
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #E3E3E3;
+    color: rgba(0, 0, 0, 0.449);
+}
+
+.btn-clear-size{
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #E3E3E3;
+    color: rgba(0, 0, 0, 0.449);
+}
+
+.book-cover{
+    display: none;
+    width: 100%; 
+    max-width: 300px;
+}
+
+.modal{
+  border-radius: 15px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-content {
+  background-color: #162D3A;
+  color: white;
+}

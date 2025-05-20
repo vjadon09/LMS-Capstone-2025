@@ -1,0 +1,16 @@
+services:
+  customer-authentication:
+    image: customer-auth:v1  # Reference the pre-built image
+    container_name: customer-authentication
+    ports:
+      - "8001:8001"
+    environment:
+      - CATALOG_SERVICE_URL=http://catalog:8002/catalog
+    depends_on:
+      - catalog
+
+  catalog:
+    image: catalog:v1  # Reference the pre-built image
+    container_name: catalog
+    ports:
+      - "8002:8002" 

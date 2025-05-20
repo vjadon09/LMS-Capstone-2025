@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: search
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: search
+  template:
+    metadata:
+      labels:
+        app: search
+    spec:
+      containers:
+      - name: search
+        image: northamerica-northeast2-docker.pkg.dev/lms-capstone-456217/fastapi-docker-repo/search:v3
+        ports:
+        - containerPort: 8003

@@ -1,0 +1,61 @@
+#header {
+    background-color: #162D3A;
+    color: white;
+}
+
+#searchFilterSection {
+    background-color: #bfe4f454;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+#section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#searchInput {
+    border-radius: 10px;
+}
+
+#genreFilter, #availabilityFilter, #quantityFilter {
+    border-radius: 10px;
+}
+
+#kidFriendlyFilter {
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+    #bookGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    #bookGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    #bookGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#bookGrid {
+    padding: 0 0 30px 0;
+}
+
+.card{
+    background: rgba(226, 226, 226, 0.26);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bookDetails{
+    border-radius: 10px; 
+    background: rgba(212, 239, 248, 0.26); 
+    box-shadow: 0px 4px 8px rgba(224, 224, 224, 0.35); 
+    padding: 2rem 2rem 4rem 2rem;
+}

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-auth
+  template:
+    metadata:
+      labels:
+        app: customer-auth
+    spec:
+      containers:
+      - name: customer-auth
+        image: northamerica-northeast2-docker.pkg.dev/lms-capstone-456217/fastapi-docker-repo/customer_auth:v6
+        ports:
+        - containerPort: 8001

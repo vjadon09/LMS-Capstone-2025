@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reservations
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reservations
+  template:
+    metadata:
+      labels:
+        app: reservations
+    spec:
+      containers:
+      - name: reservations
+        image: northamerica-northeast2-docker.pkg.dev/lms-capstone-456217/fastapi-docker-repo/reservations:v2
+        ports:
+        - containerPort: 8004

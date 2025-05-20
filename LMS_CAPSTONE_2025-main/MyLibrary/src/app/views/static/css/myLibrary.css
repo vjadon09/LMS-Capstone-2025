@@ -1,0 +1,98 @@
+.library-container {
+    background-color: #E3E3E3;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.book-list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.queue-position {
+    font-weight: bold;
+    color: #162D3A;
+}
+
+.wishlist-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.wishlist-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wishlist-item {
+    width: 80%;
+    text-align: center;
+}
+
+.add-wishlist-btn {
+    background-color: #505151;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-wishlist-btn:hover {
+    background-color: #0F1E28;
+}
+
+.wishlist-container .card {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.wishlist-list .list-group-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+}
+
+.wishlist-list .list-group-item:hover {
+    background-color: #e7e7e7;
+}
+
+.wishlist-list .delete-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.empty-wishlist-message {
+    font-size: 18px;
+    font-weight: bold;
+    color: #6c757d;
+    text-align: center;
+    padding: 20px;
+    background-color: #e7e7e7;
+    border: 2px solid #ddddde;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-home {
+    background-color: #132b37;
+    color: white;
+    padding: 0px 0;
+    width: 100%;
+}
+
+.wishlist-item-active {
+    background-color: #e7e7e7;
+}

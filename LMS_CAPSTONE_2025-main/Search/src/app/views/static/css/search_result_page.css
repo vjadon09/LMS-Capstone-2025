@@ -1,0 +1,66 @@
+.filter{
+    background-color: rgb(225, 230, 232, 0.3);
+    border-radius: 15px;
+    height: 50%;
+}
+
+.btn-custom-size {
+    padding: 6px 12px; /* Adjust padding for smaller size */
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-custom-filter{
+    background-color: white;
+    text-align: left;  
+}
+
+.btn-custom-back{
+    background-color: rgb(225, 230, 232, 0.3);
+    border-radius: 15px;
+    text-align: center;  
+}
+
+.book-cover{
+    object-fit:cover;
+    border-radius: 15px;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header{
+  background-color: #97b8b3;
+  border-bottom: none;
+  width: 100%;
+}
+
+.book-info{
+  background-color: rgb(225, 230, 232, 0.3);
+  border: none;
+  padding: 0px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card{
+border-color: white;
+}
+
+a {
+text-decoration: none;  /* Removes the underline */
+color: inherit;
+}
+
+.my-library-link {
+    background-color: #e3e3e3;
+    border-radius: 15px;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #162d3a;
+}

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mylibrary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mylibrary
+  template:
+    metadata:
+      labels:
+        app: mylibrary
+    spec:
+      containers:
+      - name: mylibrary
+        image: northamerica-northeast2-docker.pkg.dev/lms-capstone-456217/fastapi-docker-repo/mylibrary:v2
+        ports:
+        - containerPort: 8005

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usermanage
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usermanage
+  template:
+    metadata:
+      labels:
+        app: usermanage
+    spec:
+      containers:
+      - name: usermanage
+        image: northamerica-northeast2-docker.pkg.dev/lms-capstone-456217/fastapi-docker-repo/usermanage:v2
+        ports:
+        - containerPort: 8006

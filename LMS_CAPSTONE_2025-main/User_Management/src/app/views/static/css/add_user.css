@@ -1,0 +1,57 @@
+.btn-custom-size {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-custom-clear {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.478);
+    color: black;
+    transition: background-color 0.3s;
+}
+
+.forgot-password-link {
+    font-size: 12px;
+}
+  
+.btn-transparent:hover {
+    background-color: transparent;
+}
+
+.form-container{
+    background-color:  #E3E3E3;
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-transparent{
+    background-color: #162D3A;
+    color: white;
+}
+
+.btn-back{
+  background-color: none;
+  border-color: #162D3A;
+  color: black;
+}
+
+.modal{
+  border-radius: 15px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-content {
+  background-color: #162D3A;
+  color: white;
+}

@@ -1,0 +1,80 @@
+.selected {
+    background-color: #d1ecf1; /* Light blue color */
+  }
+
+.btn-extend-size {
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-cancel-size{
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162d3a6f;
+    color: white;
+    transition: background-color 0.3s;   
+}
+
+.btn-back-size{
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #E3E3E3;
+    border-color: black;
+    color: black;
+    transition: background-color 0.3s;   
+}
+
+.book-container{
+    background-color: #E3E3E3;
+    border-radius: 15px;
+}
+
+.table{
+    background-color: white;
+    border-radius: 15px;
+    
+}
+
+.btn-custom-search{
+    padding: 0;
+}
+
+.dropdown-menu {
+    background-color: #f8f9fa;  
+    border-radius: 8px;  
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef;  
+}
+
+.form-check {
+    margin-bottom: 5px; 
+}
+
+.form-check-input {
+    margin-right: 10px;  
+}
+
+.btn-clear-size{
+    background-color: white;
+}
+
+.modal{
+  border-radius: 15px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-content {
+  background-color: #162D3A;
+  color: white;
+}

@@ -1,0 +1,44 @@
+a {
+    text-decoration: none;
+    opacity: 0.8;
+  }
+
+  .btn-custom-size {
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.table{
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+.table-container{
+    background-color: #E3E3E3;
+    border-radius: 15px;
+    overflow: hidden; /* Prevent scrolling outside tbody */
+}
+
+.btn-clear-size{
+    background-color: white;
+}
+
+.user-table{
+    max-height: 400px;
+}
+
+.list-group {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  max-height: 200px;
+}

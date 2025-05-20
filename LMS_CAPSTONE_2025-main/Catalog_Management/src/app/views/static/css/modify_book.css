@@ -1,0 +1,79 @@
+.modify-book-form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.btn-custom-size {
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162D3A;
+    color: white;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.btn-clear-size {
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: lightgray;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.list-group {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-height: 300px;
+}
+
+
+#searchInput {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#bookDetailsForm {
+    display: none;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.container.my-auto {
+    flex-grow: 1;
+}
+
+.img-fluid{
+  width: 85%;
+  object-fit: cover;
+}
+
+.modal{
+  border-radius: 15px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-content {
+  background-color: #162D3A;
+  color: white;
+}

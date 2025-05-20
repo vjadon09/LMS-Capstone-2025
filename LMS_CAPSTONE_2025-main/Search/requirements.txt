@@ -1,0 +1,16 @@
+pip
+flask
+motor
+fastapi
+uvicorn[standard]
+google-cloud-firestore
+firebase-admin
+python-dotenv
+pydantic
+pymongo
+python-jose
+passlib
+requests
+pytest
+python-multipart
+pytz

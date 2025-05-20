@@ -1,0 +1,81 @@
+/* Custom button size */
+.btn-custom-size {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #162d3a;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.btn-custom-size:hover {
+    background-color: #1f3d4d; /* Darker shade on hover */
+}
+
+/* Forgot password link styling */
+.forgot-password-link {
+    font-size: 12px;
+    text-decoration: none;
+    color: #162d3a;
+}
+
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+/* Image styling */
+.homepage_img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Ensures the image is responsive */
+}
+
+/* Custom styling for login form container */
+.login-form-container {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Styling for the 'My Library' link */
+.my-library-link {
+    background-color: #e3e3e3;
+    border-radius: 15px;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #162d3a;
+}
+
+.my-library-link:hover {
+    background-color: #c9c9c9;
+}
+
+/* Form input fields */
+.form-control {
+    border-radius: 8px;
+}
+
+/* Centering content in the page */
+.container {
+    max-width: 1200px;
+}
+
+/* Styling for error messages */
+#errorMessage {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.btn-transparent {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    color: #132b37; 
+  }
+  
+  .btn-transparent:hover {
+    background-color: transparent;
+  }

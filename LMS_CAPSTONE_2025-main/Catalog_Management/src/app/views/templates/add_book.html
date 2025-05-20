@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Book</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/catalog/static/css/add_book.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/inputmask/dist/inputmask.min.js"></script>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="bg-primary text-white text-center mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Library Management System</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/catalog/admin_dashboard">My Dashboard</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/catalog/manager-login" style="background-color: #E3E3E3; border-radius: 15px">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-auto d-flex justify-content-center">
+    <!-- Content goes here -->
+    <div class="col-1"></div>
+    <div class="col-10">
+    <div class="add-book-form col-12 mb-5 p-4 bg-light align-items-center justify-content-center ">
+        <h1 class="fs-2 mb-4" style="text-align: center;">Add Book to Inventory 📖</h1>
+        <form id="addBookForm" class="row g-3">
+          <div class="col-md-6">
+            <label for="title" class="form-label">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+          </div>
+          <div class="col-md-6">
+            <label for="isbn" class="form-label">ISBN:</label>
+            <input type="text" class="form-control" id="isbn" name="isbn" required>
+          </div>        
+          <div class="col-md-6">
+            <label for="author" class="form-label">Author:</label>
+            <input type="text" class="form-control" id="input-1" name="author" required>
+          </div>  
+          <div class="col-md-6">
+            <label for="genre" class="form-label">Genre:</label>
+            <input type="text" class="form-control" id="genre" name="genre" required>
+          </div>
+          <div class="col-md-6">
+            <label for="rating" class="form-label">Rating:</label>
+            <input type="number" class="form-control" id="rating" name="rating" step="0.1" min="0" max="5" required>
+          </div>
+          <div class="col-md-6">
+            <label for="kidFriendly" class="form-label">Kid Friendly:</label>
+            <select id="kidFriendly" name="kidFriendly" class="form-select" required>
+              <option selected disabled>Choose...</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="description" class="form-label">Description:</label>
+            <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+          </div>
+          <div class="col-md-6">
+            <label for="format" class="form-label">Book Format:</label>
+            <select id="format" name="format" class="form-select" required onchange="toggleFileUpload()">
+              <option selected disabled>Choose...</option>
+              <option value="eBook">eBook</option>
+              <option value="Audio">Audio</option>
+            </select>
+          </div>
+          <!-- File Upload Section for eBook (.epub) or Audio (.mp3) -->
+          <div class="col-md-6" id="fileUploadSection" style="display: none;">
+            <label for="bookFile" class="form-label">Upload Book File:</label>
+            <input type="file" class="form-control" id="bookFile" name="bookFile" accept=".mp3,.epub" required>
+          </div>         
+          <div class="col-md-6" id="pageField">
+            <label for="pageNumber" class="form-label">Numer of Pages:</label>
+            <input type="number" class="form-control" id="pageNumber" name="pageNumber" min="1">
+          </div>
+          <div class="col-md-6" id="minuteField" style="display: none;">
+            <label for="numOfMins" class="form-label">Number of Minutes:</label>
+            <input type="number" class="form-control" id="numOfMins" name="numOfMins" min="1">
+          </div>   
+          <div class="col-md-6">
+            <label for="numCopies" class="form-label">Number of Copies:</label>
+            <input type="number" class="form-control" id="numCopies" name="numCopies" min="1" max="6" required>
+          </div>
+          <div class="col-md-6">
+            <label for="publisher" class="form-label">Publisher:</label>
+            <input type="text" class="form-control" id="publisher" name="publisher" required>
+          </div>
+          <div class="col-md-6">
+            <label for="status" class="form-label">Status:</label>
+            <select id="status" name="status" class="form-select" required>
+              <option selected disabled>Choose...</option>
+              <option>Available</option>
+              <option>Not Available</option>
+            </select>
+          </div>    
+          <div class="col-12">
+              <div class="mb-3">
+                <label for="imageUpload" class="form-label">Upload Book Cover:</label>
+                <input type="file" class="form-control" id="imageUpload" name="imageUpload" accept="image/*" onchange="previewImage(event)" required>
+              </div>
+              <div class="mb-3">
+                <img id="imagePreview" src="#" alt="Image Preview" style="display: none; width: 100%; max-width: 14rem;"/>
+              </div>       
+          </div>   
+          <div class="col-12">
+            <button type="submit" class="btn btn-custom-size px-4 mx-2" onclick="submitBook(event)">Submit</button>
+            <button type="button" class="btn btn-clear-size px-4 mx-2" onclick="clear()">Clear</button>
+            <button type="button" class="btn btn-cancel-size px-4 mx-2" style = "border-color: black;" onclick="cancel()">Cancel</button>
+          </div>
+        </form>
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="modal-body"> </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+    <p>2025 Capstone Project</p>
+  </footer>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/catalog/static/js/add_book.js"></script>
+</body>
+</html>

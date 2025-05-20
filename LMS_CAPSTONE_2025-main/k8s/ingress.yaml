@@ -1,0 +1,73 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lmscapstone-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    networking.gke.io/managed-certificates: "lmscapstone-cert"
+    #nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/secure-backends: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "8m"
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: ""
+    http:
+      paths:
+      - path: /static
+        pathType: Prefix
+        backend:
+          service:
+            name: customer-auth
+            port:
+              number: 8001
+      - path: /auth
+        pathType: Prefix
+        backend:
+          service:
+            name: customer-auth
+            port:
+              number: 8001
+      - path: /catalog
+        pathType: Prefix
+        backend:
+          service:
+            name: catalog
+            port:
+              number: 8002
+      - path: /search
+        pathType: Prefix
+        backend:
+          service:
+            name: search
+            port:
+              number: 8003
+      - path: /reservations
+        pathType: Prefix
+        backend:
+          service:
+            name: reservations
+            port:
+              number: 8004
+      - path: /mylib
+        pathType: Prefix
+        backend:
+          service:
+            name: mylibrary
+            port:
+              number: 8005
+      - path: /userManage
+        pathType: Prefix
+        backend:
+          service:
+            name: usermanage
+            port:
+              number: 8006
+      - path: /notif
+        pathType: Prefix
+        backend:
+          service:
+            name: notifications
+            port:
+              number: 8008

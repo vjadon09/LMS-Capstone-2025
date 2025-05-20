@@ -1,0 +1,68 @@
+.btn-custom {
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 220px; /* Uniform height */
+    width: 100%;
+    border: none;
+}
+
+/* Custom Button Colors */
+.btn-library { background-color:rgb(134, 179, 141);  } /* Blue */
+.btn-transactions { background-color:rgb(134, 179, 141);  } /* Red */
+.btn-holds { background-color:rgb(134, 179, 141); } /* Orange */
+.btn-account { background-color:rgb(134, 179, 141); } /* Green */
+.btn-search { background-color:rgb(134, 179, 141);  } /* Purple */
+.btn-notifications { background-color:rgb(134, 179, 141);  } /* Teal */
+
+.btn h1 {
+    font-size: 2.5rem; /* Icon size */
+    margin-bottom: 10px;
+}
+
+.btn h3 {
+    font-size: 1.6rem; /* Title text size */
+    margin-bottom: 5px;
+}
+
+.btn p {
+    font-size: 1rem; /* Description text */
+    margin: 0;
+    padding: 0 10px;
+}
+
+.user-dashboard {
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.dashboard-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Hover effect */
+.btn-custom:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+    .btn-custom {
+        height: 180px; /* Adjust height for smaller screens */
+    }
+    .btn h1 {
+        font-size: 2rem;
+    }
+    .btn h3 {
+        font-size: 1.4rem;
+    }
+    .btn p {
+        font-size: 0.9rem;
+    }
+}

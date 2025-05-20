@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Holds</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/reservations/static/css/manage_holds_admin.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/inputmask/dist/inputmask.min.js"></script>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="bg-primary text-white text-center mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Library Management System</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/reservations/dashboard">My Dashboard</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/reservations/manager-login" style="background-color: #E3E3E3; border-radius: 15px">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-auto d-flex justify-content-center">
+    <!-- Content goes here -->
+    <div class="container book-container">
+        <div class="container col-12 mt-5 mb-3">
+            <h2>Hold Requests List 📋</h2>
+            <div class="row">
+                <div class="col-8 text-end">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Filter
+                        </button>
+                        <ul class="dropdown-menu p-2">
+                              <li class="list-group-item">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="bookID" id="filter-book-id">
+                                      <label class="form-check-label" for="filter-title">Book ID</label>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                  <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="isbn" id="filter-isbn">
+                                      <label class="form-check-label" for="filter-isbn"> ISBN</label>
+                                  </div>
+                              </li>
+                              <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="user" id="filter-user">
+                                    <label class="form-check-label" for="filter-user"> User </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="holdDate" id="filter-hold-date">
+                                    <label class="form-check-label" for="filter-hold-date"> Hold Date </label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="dueDate" id="filter-due-date">
+                                    <label class="form-check-label" for="filter-due-date"> Due Date </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="submit" class="btn btn-clear-size px-4 mx-2" onclick="resetTable()">Clear</button>
+                      </div>
+                      
+                </div>
+                <div class="col-4">
+                    <form class="mb-3" role="search"> 
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search..." oninput="searchBooks()" disabled>
+                        <ul id="bookList" class="list-group">
+                            <!-- Dynamically filled book list will appear here -->
+                        </ul>     
+                      </form>
+                </div>
+            </div>
+            <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th></th>
+                <th>#</th>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Book ID</th>
+                <th>User Information</th>
+                <th>Hold Date</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="book-table">
+                <!-- Rows will be added dynamically here -->
+            </tbody>
+            </table>  
+        </div> 
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+              <button type="submit" class="btn btn-extend-size mx-1 my-3 px-3" onclick="extendHold()">Extend</button>
+              <button type="submit" class="btn btn-cancel-size mx-1 my-3 px-3" onclick="cancelHold()">Delete</button>
+          </div>
+      </div>
+      <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+</main>
+
+  <!-- Footer -->
+  <footer class="text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+    <p>2025 Capstone Project</p>
+  </footer>
+
+  <!-- Include Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/reservations/static/js/manage_holds_admin.js"></script>
+</body>
+</html>

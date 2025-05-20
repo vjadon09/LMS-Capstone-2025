@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/catalog/static/css/delete_book.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+   <!-- Header -->
+   <header class="bg-primary text-white text-center mb-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Library Management System</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/catalog/admin_dashboard">My Dashboard</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="/catalog/manager-login" style="background-color: #E3E3E3; border-radius: 15px">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header> 
+
+  <div class="container my-auto d-flex justify-content-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="delete-book-form col-12 mb-5 p-4 bg-light align-items-center justify-content-center">
+          <form class="row g-3" id="deleteBookForm" action="/catalog/remove-item" method="POST">
+            <h2 class="text-center m-3">Delete Book from Inventory 🗑️</h2>
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by ISBN, title, or author..." oninput="searchBooks()">
+            <ul id="bookList" class="list-group">
+                <!-- Dynamically filled book list will appear here -->
+            </ul>
+            
+            <!-- Display Book Details -->
+            <div id="bookDetails" class="mt-4">
+                <!-- Book details will be displayed here when a book is clicked -->
+            </div>
+            <div class="col-12">
+              <div class="text-start" id="form-alert"></div>
+              <button type="submit" class="btn btn-custom-size px-4" id = "deleteButton" onclick="deleteBook()">Delete</button>
+              <button type="button" class="btn btn-clear-size px-4 mx-2" style = "border-color: black;" onclick="cancel()">Cancel</button>
+            </div>
+          </form>
+          <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body"> </div>
+              </div>
+            </div>
+          </div>
+       </div>
+      </div>
+    <div class="col-1"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-white text-center p-1 mt-auto" style="background-color: #162D3A; color: white;">
+    <p>2025 Capstone Project</p>
+  </footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="/catalog/static/js/delete_book.js"></script>
+
+</body>
+</html>

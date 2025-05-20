@@ -1,0 +1,10 @@
+.btn {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #21485ec9;
+    color: white;   
+}
+
+.admin-dashboard {
+    border-radius: 15px;
+}
