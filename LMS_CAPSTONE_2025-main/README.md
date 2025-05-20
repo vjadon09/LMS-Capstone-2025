@@ -1,10 +1,6 @@
 
 # Library Management System (LMS)
 
-**Access the Application Here:** 
-
-[Library Management System Website](https://34.47.39.132/auth/)
-
 ## Installation Guide
 
 Follow these steps to set up and run the project locally.
@@ -43,7 +39,7 @@ Make sure you have the following installed:
    ```
 
 3. **Create a Docker image for each microservice:**
-   Make sure you have Docker Desktop installed (link provided above), and run the following command in each microservice directory:
+   Make sure you have Docker Desktop installed and run the following command in each microservice directory:
    ```sh
    docker build -t <microservicename1> .
    docker build -t <microservicename2> .
@@ -101,7 +97,7 @@ Make sure you have the following installed:
 - Mansi Patel
 - Astha Patel
 - Atiya Azeez
-
+**Note:** README file credits: Mansi Patel
 
 ## Original Repository:
 
